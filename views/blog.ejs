@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Blog
+		</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+	</head>
+	
+	<body>
+		<% for (let p of allPosts) { %>
+		<div>
+			<%- p.title %>
+			<%- p.body %>
+			<p> Created: <%- p.created %> </p>
+			<p> Modified: <%- p.modified %> </p>
+		</div>
+		<% } %>
+		<% if (nextid != null) { %>
+			<a href='/blog/<%= username %>?start=<%= nextid %>' id='next' class="button">Next</a>
+		<% } %>
+	</body>
+
+</html>
